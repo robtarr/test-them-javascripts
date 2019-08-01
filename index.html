@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Build Right: Modern Javascript</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/glint.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/agate.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+    <script src="https://embed.runkit.com"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section data-markdown="./slides/build-right.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        
+        <section data-markdown="./slides/discuss-what-is-testing.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/intro.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/getting-the-code.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/frameworks.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/mocha-dsl.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/chai-matchers.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/exercise-1.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/testing-boundaries.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/exercise-2.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/spa-examples.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/discuss-test-suite-shape.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/performance-tests.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/accessibility-tests.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/team-flow.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/exercise-3.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/greenfield.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/discuss-team-buyin.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+
+        <section data-markdown="./slides/closing.md"
+                 data-separator="^\n\n\n"
+                 data-separator-vertical="^\n\n"
+                 data-separator-notes="^Note:"
+                 >
+        </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+        controls: false, // Always feels weird having this when *giving* a presentation
+        progress: true, // Personal Preferences
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+      Reveal.addEventListener('slidechanged', function( event ) {
+          [...document.querySelectorAll('.jsbin-script')].forEach(x => x.remove());
+          [...event.currentSlide.querySelectorAll('.runkit iframe')].forEach(x => x.remove());
+
+          if (event.currentSlide.querySelector('.jsbin-embed')) {
+              const script = document.createElement('script');
+              script.src = 'http://static.jsbin.com/js/embed.min.js?3.41.0&height=500px&width=500px';
+              script.className = 'jsbin-script';
+              event.currentSlide.appendChild(script);
+          }
+
+          if (event.currentSlide.querySelector('.runkit')) {
+              RunKit.createNotebook({
+                  element: event.currentSlide.querySelector('.runkit'),
+                  source: event.currentSlide.querySelector('.runkit span').textContent,
+									nodeVersion: '> 6.0.0',
+              });
+          }
+      } );
+		</script>
+	</body>
+</html>

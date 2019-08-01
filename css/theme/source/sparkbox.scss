@@ -1,0 +1,123 @@
+/*
+
+1. **Include [/css/theme/template/mixins.scss](https://github.com/hakimel/reveal.js/blob/master/css/theme/template/mixins.scss)**
+Shared utility functions.
+
+2. **Include [/css/theme/template/settings.scss](https://github.com/hakimel/reveal.js/blob/master/css/theme/template/settings.scss)**
+Declares a set of custom variables that the template file (step 4) expects. Can be overridden in step 3.
+
+3. **Override**
+This is where you override the default theme. Either by specifying variables (see [settings.scss](https://github.com/hakimel/reveal.js/blob/master/css/theme/template/settings.scss) for reference) or by adding any selectors and styles you please.
+
+4. **Include [/css/theme/template/theme.scss](https://github.com/hakimel/reveal.js/blob/master/css/theme/template/theme.scss)**
+The template theme file which will generate final CSS output based on the currently defined variables.
+
+*/
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Override theme settings (see ../template/settings.scss)
+
+$reasonable-min-font-size: 2em;
+
+/******************************
+* Title Slides
+* Usage: <!-- .slide class="title" data-background="#000" -->
+******************************/
+.reveal .title h1, .reveal .title h2, .reveal .title h3,  {
+  color: #fff;
+}
+
+.reveal .title a {
+  color: #73c5d3
+}
+
+
+.reveal ol,
+.reveal ul {
+  line-height: 1.2em;
+  font-size: $reasonable-min-font-size;
+  color: #fff;
+  margin-top: 1em;
+}
+
+.reveal ul {
+  list-style: none;
+  text-align: center;
+}
+
+.reveal p, .reveal ol, .reveal ul {
+  font-size: 3em;
+}
+
+.reveal hr {
+  border: 1px dashed #232323;
+  margin: 1em auto;
+  width: 50%;
+}
+
+.reveal pre code {
+  padding: .7em;
+}
+
+.reveal {
+  h2, h3 {
+    line-height: 1.6;
+  }
+}
+
+.passingExample {
+  color: #34b649 !important;
+}
+
+.failingExample {
+  color: #b43535 !important;
+}
+
+.dark {
+  h1 {
+    color: #fff;
+  }
+
+  h2 {
+    color: #777;
+  }
+}
+
+.screenshot {
+  width: 100%;
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+/****** UPGRADE HELL 🔥 *******************
+ * Things that can't be customized without
+ * directly overriding selectors in the
+ * based theme.
+ *****************************************/
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  background: inherit;
+  border: none;
+}
+
+/*********************************************
+ * CODE
+ *********************************************/
+.reveal pre code {
+  padding: 24px;
+}
+
+#arrow-span-span-functions- {
+  span {
+    font-family: 'Apple Color Emoji';
+  }
+}

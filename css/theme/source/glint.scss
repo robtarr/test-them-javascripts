@@ -1,0 +1,140 @@
+/*  ------------------------------
+* Glint theme for reveal.js
+* Author: Philip Zastrow http://zastrow.co
+*
+* Designed for use by Sparkbox
+* Based on the Sparkbox Keynote
+* by Jeremy Loyd http://www.jloyd.net
+*
+* For other themes, change $codeBackground accordingly.
+*
+*/
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+ // Sparkbox Branded
+$c-sparkblue-lighten-3: #EAFCFF; // Background color
+$c-sparkblue-lighten-2: #D5F2F7;
+$c-sparkblue-lighten-1: #A3DAE3;
+$c-sparkblue: #50B7C8;
+$c-sparkblue-darken-1: #318c9b;
+$c-sparkblue-darken-2: #1C4C55;
+$c-sparkblue-darken-3: #0f3138; // Background color
+
+// Grayscale
+
+$c-white: #ffffff;
+$c-gray-99: #fcfcfc;
+$c-gray-98: #f3f3f3;
+$c-gray-95: #EDEDED;
+$c-gray-90: #E5E5E5;
+$c-gray-85: #D9D9D9;
+$c-gray-80: #CCCCCC;
+$c-gray-75: #C0C0C0;
+$c-gray-70: #B0B0B0;
+$c-gray-60: #999999;
+$c-gray-50: #808080;
+$c-gray-45: #727272;
+$c-gray-40: #696969;
+$c-gray-30: #4D4D4D;
+$c-gray-20: #363636;
+$c-gray-15: #262626;
+$c-gray-10: #171717; // Background color
+$c-black: #000000;
+
+
+// Syntax Highlighting for Foundry Code Blocks
+
+$c-code-green: #94D10B;
+$c-code-pink: #D34E89;
+$c-code-blue: $c-sparkblue;
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: $c-sparkblue-lighten-2;
+
+$mainColor: $c-sparkblue-darken-2;
+$headingColor: $c-gray-20;
+
+$mainFontSize: 38px;
+$mainFont: 'Avenir Next', Helvetica, sans-serif;
+$headingFont: 'Avenir Next', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 700;
+$linkColor: $c-sparkblue-darken-1;
+$linkColorHover: $c-sparkblue-darken-1;
+$selectionBackgroundColor: rgba($c-sparkblue, 0.4);
+
+$heading1Size: 2em;
+$heading2Size: 1.5em;
+$heading3Size: 0.875em;
+$heading4Size: 1.0em;
+
+.reveal .has-dark-background {
+  h1 {
+    color: $c-sparkblue-lighten-1;
+  }
+  h2, h3, h4, h5, h6 {
+		color: $c-sparkblue;
+	}
+
+  &, a {
+    color: $c-white;
+  }
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+// Theme overrides ------------------------------
+.reveal {
+  section {
+    img {
+      border: none;
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid $c-sparkblue-lighten-1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.125em;
+
+    code {
+      text-transform: none;
+    }
+  }
+
+  h3 {
+    color: $c-sparkblue-darken-2;
+  }
+
+  pre {
+    width: 100%;
+  }
+
+  .build-right h3 {
+    color: $c-white;
+  }
+  .progress {
+    height: 4px;
+  }
+
+  .footnote {
+    margin-top: 5em;
+    font-size: .7em;
+    font-style: italic;
+  }
+}
