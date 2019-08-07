@@ -2,52 +2,30 @@
 <!-- .slide: class="dark" data-background="#1e1e1e" -->
 
 # SPA Frameworks
-Note: Ryan
 
 
-## Ember
+## React
 
 ```javascript
-App.MyModule = Ember.Object.extend( {
-  title: '',
-  timeLimit: 00,
-  loadStartup: function(data) {
-    @set('title', data.Title);
-    @set('timeLimit', data.TimeLimit);
+class MyModule extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: props.title || '',
+      timeLimit: props.timeList || 0;
+    }
   }
 });
 ```
 
 ```javascript
+import { render } from 'react-testing-library'
+...
 describe('Loading App Data', function() {
   it('sets basic data', function() {
-    myModule.loadStartup({ Title: 'Build Right', TimeLimit: 60 });
+      const { getByText } = render(<MyModule title="Build Right" timeLimit={60}/>);
 
-    expect(myModule.get('title')).toEqual('Build Right');
-    expect(myModule.get('timeLimit')).toEqual(60);
-});
-```
-
-
-## Knockout
-```javascript
-App.MyModule = {
-  title: ko.observable(''),
-  timeLimit: ko.observable(00),
-  loadStartup: function(data) {
-    @title(data.Title);
-    @timeLimit(data.TimeLimit);
-  }
-}
-```
-
-```javascript
-describe('Loading App Data', function() {
-  it('sets basic data', function() {
-    myModule.loadStartup({ Title: 'Build Right', TimeLimit: 60 });
-
-    expect(myModule.title()).toEqual('Build Right');
-    expect(myModule.timeLimit()).toEqual(60);
-  });
+    expect(getByLabelText('Title')).to.equal('Build Right');
+    expect(getByLabelText('Time Limit')).to.equal('60');
 });
 ```

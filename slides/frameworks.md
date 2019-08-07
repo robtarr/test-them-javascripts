@@ -2,13 +2,10 @@
 <!-- .slide: class="dark" data-background="#1e1e1e" -->
 
 # Frameworks
-## Jasmine <!-- .element: class="fragment" -->
-## QUnit <!-- .element: class="fragment" -->
-## Mocha <!-- .element: class="fragment" -->
-## ... <!-- .element: class="fragment" -->
-
-
-![Mocha](/images/mocha-logo.png) <!-- .element: style="width: 45%" -->
+![Mocha](./images/test-frameworks/mocha-logo.png) <!-- .element: style="width: 25%; margin: 0 5%" class="fragment" data-fragment-index=2 -->
+![Ava](./images/test-frameworks/ava.png) <!-- .element: style="width: 35%; margin: 0 3% 3%" class="fragment" data-fragment-index=3 -->
+![Jest](./images/test-frameworks/jest.png) <!-- .element: style="width: 25%; margin: 2% 5%" class="fragment" data-fragment-index=2 -->
+![Jasmine](./images/test-frameworks/jasmine.png) <!-- .element: style="width: 25%; margin: 2% 5%" class="fragment" data-fragment-index=4 -->
 
 
 # Runners

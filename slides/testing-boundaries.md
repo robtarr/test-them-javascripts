@@ -4,70 +4,76 @@
 # Testing Boundaries
 
 
-## $.ajax
 ```javascript
-myModule.startup = function() {
-  $.ajax({
-    url: 'br-frontend-testing-triangles.herokuapp.com',
-    success: function(data) {
-      $('#triangleType').text(data.type);
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-      $('#error').text('Error: ' + errorThrown);
-    }
-  });
-};
+const React = require('react');
+export default class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.addItem = this.addItem.bind(this);
+  }
+
+  addItem(item) {
+    this.setState({ item });
+  }
+
+  render() {
+    <button onClick={this.addItem('thing')}>Buy Me!</button>;
+  }
+}
+```
+
+
+```javascript
+addItem(item) {
+  const available = this.props.checkStock(item);
+
+  if (available > 0) {
+    this.setState({ item });
+  } else {
+    this.props.notify('Sorry, that item is out of stock');
+  }
+}
 ```
 
 
 ## Mow Your Own Yard
 
 ![Boundaries](../images/yard-boundaries.jpg)
+[https://seesparkbox.com/foundry/mow_your_own_yard](https://seesparkbox.com/foundry/mow_your_own_yard)
 
 
-## Assure Ajax Was Called
+## Mock `checkStock`
+
 ```javascript
-describe("On Startup", function() {
+it('adds item to the cart if available', () => {
+  const inStock = () => 80;
 
-  it("make an AJAX request", function() {
-    spyOn($, 'ajax');
-    myModule.startup();
+  const wrapper = shallow(<ShoppingCart checkStock={inStock} />);
+  const instance = wrapper.instance();
+  instance.addItem('Build Right: Front End Testing');
 
-    expect($.ajax).toHaveBeenCalled();
-  });
+  expect(wrapper.state('item')).to.equal('Build Right: Front End Testing');
 });
 ```
 
 
-## Test Your Callbacks
-```javascript
-describe('Loading App Data', function() {
-  it('sets basic data', function() {
-    spyOn(myModule, 'update');
-    myModule.success({ type: 'scalene' });
+## Check for Out of Stock
 
-    expect(myModule.update).toHaveBeenCalledWith('type', 'scalene');
-  });
+```javascript
+it('adds item to the cart if available', () => {
+  let notified = false;
+  const outOfStock = () => 0;
+  const notifySpy = () => {
+    notified = true;
+  }
+
+  const wrapper = shallow(<ShoppingCart
+    checkStock={outOfStock} notify={notifySpy}
+  />);
+  const instance = wrapper.instance();
+  instance.addItem('Out of stock item');
+
+  expect(notified).to.be.true;
 });
-```
-
-```javascript
-myModule.success = function(data) {
-  update('type', data.type);
-};
-
-myModule.update = function(id, value) {
-  $('#' + id).text(value);
-};
-```
-
-
-```javascript
-myModule.startup = function() {
-  $.ajax({
-    url: 'br-frontend-testing-triangles.herokuapp.com',
-    success: success,
-    failure: failure
-  });
-};
 ```

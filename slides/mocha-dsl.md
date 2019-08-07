@@ -98,10 +98,8 @@ describe('ShoppingCart', () => {
 
 ```javascript
 describe('ShoppingCart', () => {
-  var shoppingCart;
-  beforeEach(() => {
-    shoppingCart = new ShoppingCart();
-  });
+  let shoppingCart;
+  beforeEach(() => { shoppingCart = new ShoppingCart(); });
 
   describe('#constructor', () => {
     it('has no items', () => {
@@ -116,9 +114,7 @@ describe('ShoppingCart', () => {
       expect(shoppingCart.itemCount).to.equal(2);
     });
 
-    xit('raises cartChanged when adding items', () => {
-      // publish events for great good
-    });
+    xit('raises cartChanged when adding items', () => {});
   });
 });
 ```

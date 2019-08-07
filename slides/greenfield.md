@@ -17,12 +17,22 @@ $ yo mg
 
 
 ## Consistant structure
-![File Structure](/images/mg-file-structure.png) <!-- .element: style="margin-top: 20px; width: 50%" -->
+```
+.
+├── PULL_REQUEST_TEMPLATE.md
+├── README.md
+├── app.js
+├── babel.config.js
+├── src
+│   ├── components
+│   │   ├── shoppingCart
+│   │   │   ├── index.js
+│   │   │   └── spec.js
+```
 
 
-## Show me the tests
-![Spec Folder](/images/spec-folder.png) <!-- .element: style="margin-top: 20px; width: 50%" -->
+## Start It Up
 
-
-## Grunt watch
-![Grunt Watch](/images/grunt-watch.png) <!-- .element: style="margin-top: 20px; width: 90%" -->
+```
+npm start
+```

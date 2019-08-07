@@ -1,26 +1,18 @@
 
 <!-- .slide: class="dark" data-background="#1e1e1e" -->
 
-# Stories
+# Story Time
 
 Note:
-
-  - SpeedyRewards SDK
-  - Holsystems
-  - SB Map Reimplementation
   - Electroshield
 
 
 ![650 lines of js](/images/650-lines-of-js.gif) <!-- .element: style="width: 65%" -->
 
 
-![Event Map](/images/Sparkbox-event-map.gif) <!-- .element: class="screenshot" -->
-
-
 ## Culture of Not Testing
 - Hard <!-- .element: class="fragment" -->
 - Afterthought <!-- .element: class="fragment" -->
-- Background <!-- .element: class="fragment" -->
 - Web is Young <!-- .element: class="fragment" -->
 
 
